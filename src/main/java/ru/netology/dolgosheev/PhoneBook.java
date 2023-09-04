@@ -3,6 +3,7 @@ package ru.netology.dolgosheev;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.TreeMap;
 
 public class PhoneBook {
 
@@ -28,5 +29,8 @@ public class PhoneBook {
     public int findByName(String name) {
         if (phoneBook.containsKey(name)) return phoneBook.get(name);
         return -1;
+    }
+
+    public void printAllNames() {
     }
 }
