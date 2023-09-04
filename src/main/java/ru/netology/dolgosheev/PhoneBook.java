@@ -2,6 +2,7 @@ package ru.netology.dolgosheev;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class PhoneBook {
 
@@ -15,6 +16,12 @@ public class PhoneBook {
     }
 
     public String findByNumber(int number) {
-        return null;
+        Optional<String> result = phoneBook.entrySet()
+                .stream()
+                .filter(entry -> number == entry.getValue())
+                .map(Map.Entry::getKey)
+                .findFirst();
+
+        return result.orElse(null);
     }
 }
