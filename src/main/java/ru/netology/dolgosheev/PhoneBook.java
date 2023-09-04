@@ -32,5 +32,10 @@ public class PhoneBook {
     }
 
     public void printAllNames() {
+        Map<String, Integer> treeMap = new TreeMap<String, Integer>(phoneBook);
+        StringBuilder stringBuilder = null;
+        treeMap.forEach((key, value) -> {
+            System.out.println(key);
+        });
     }
 }
