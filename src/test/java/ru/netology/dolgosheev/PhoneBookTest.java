@@ -28,4 +28,12 @@ public class PhoneBookTest {
         assertTrue(phoneBook.add("Aleksandr", 5555555) == 1,
                 "Неверное число контактов");
     }
+
+    @Test
+    public void findByNumber() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Aleksandr", 5555555);
+        phoneBook.add("Stepan", 2222222);
+        assertTrue(phoneBook.findByNumber(5555555).equals("Aleksandr"), "Неправильное имя");
+    }
 }
